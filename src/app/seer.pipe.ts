@@ -7,7 +7,6 @@ import { pluck } from "rxjs/operators";
 })
 export class SeerPipe implements PipeTransform {
   transform(value: any, index: any): any {
-    // console.log(value);
     let temp = "";
     from(value)
       .pipe(pluck("seer"))
@@ -17,7 +16,6 @@ export class SeerPipe implements PipeTransform {
         } else {
           temp = temp + "-" + src;
         }
-        console.log(temp);
       });
     let returnTyp = "";
     if (index < 6) {
