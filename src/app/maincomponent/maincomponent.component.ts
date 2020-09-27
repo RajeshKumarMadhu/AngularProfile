@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap, mergeAll, mergeMap, pluck } from 'rxjs/operators';
 import * as echarts from 'echarts';
 
 @Component({
@@ -24,6 +24,8 @@ export class MaincomponentComponent implements OnChanges {
   processedArray  = [];
   tempProcessedArray = [];
   wordArray = [];
+  dataForTable:any;
+  seers:any;
   options: Observable<any>;
 
   constructor() { }
@@ -272,7 +274,14 @@ export class MaincomponentComponent implements OnChanges {
             }
           }
      }
-    // this.processedArray = tempArr;
+    this.dataForTable = tempArr[0].children;
+    this.seers = [];
+    from(this.dataForTable).pipe(pluck('children')).subscribe((seer:any)=> {
+      seer.forEach(element => {
+        this.seers.push(element);
+      });
+    });
+    //this.seers.join();
     this.options = from(tempArr)
     .pipe(
       map((data) => {

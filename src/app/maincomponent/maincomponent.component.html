@@ -1,1 +1,23 @@
-  <div echarts [options]="options | async" class="demo-chart"></div>
+<div class="container">
+  <p></p>
+  <table class="table table-md table-bordered table-responsive table-striped">
+    <thead class="thead-inverse ">
+      <tr>
+        <th class="text-center" *ngFor="let item of dataForTable" [attr.colspan]="item?.children?.length">{{item.name}}
+        </th>
+      </tr>
+      <tr>
+        <th class="text-center" *ngFor="let item of dataForTable;let i = index" [attr.colspan]="item?.children?.length">
+          {{item.children | seer: i }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let item of seers">{{item.seer}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div echarts [options]="options | async" class="demo-chart"></div>

@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { PaalsComponent } from './paals/paals.component';
 import * as echarts from 'echarts';
+import { SeerPipe } from './seer.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import * as echarts from 'echarts';
     MaincomponentComponent,
     HomeComponent,
     HeaderComponent,
-    PaalsComponent
+    PaalsComponent,
+    SeerPipe
   ],
   imports: [
     BrowserModule,

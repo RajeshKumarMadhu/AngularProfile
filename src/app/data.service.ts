@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from './../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  url = 'http://localhost:4200/assets/data/';
+
+  url = `${environment.url}` + '/assets/data/';
   charactersEndPoint = 'characters.json';
   kuralsEndPoint = 'thirukural.json';
 
