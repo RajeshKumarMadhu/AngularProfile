@@ -1,36 +1,36 @@
-<mat-tab-group mat-align-tabs="center" [color]="textColor" [backgroundColor]="firstTabBgColor" (selectedTabChange)="activeTabChanged($event)">
-  <mat-tab label="{{paal}}" *ngFor="let paal of muppaal" >
+<mat-tab-group mat-align-tabs="center" [color]="textColor" [backgroundColor]="firstTabBgColor"
+  (selectedTabChange)="activeTabChanged($event)">
+  <mat-tab label="{{paal}}" *ngFor="let paal of muppaal">
   </mat-tab>
 </mat-tab-group>
 <br>
-<mat-tab-group mat-align-tabs="center" [(selectedIndex)]="selectedIndex" [color]="textColor" [backgroundColor]="secondTabBgColor"  (selectedTabChange)="fetchSelectedAdhigaram($event)">
+<mat-tab-group mat-align-tabs="center" [(selectedIndex)]="selectedIndex" [color]="textColor"
+  [backgroundColor]="secondTabBgColor" (selectedTabChange)="fetchSelectedAdhigaram($event)">
   <mat-tab label="{{item.adhigaramname}}" *ngFor="let item of adhigarams">
   </mat-tab>
 </mat-tab-group>
 <div class="container">
   <div class="row mt-5">
-      <mat-accordion *ngFor="let item of kurals">
-        <mat-expansion-panel  class="card-margin"
-        >
-          <mat-expansion-panel-header collapsedHeight="150px" expandedHeight="125px" MatAccordionDisplayMode>
-            <div>
+    <mat-accordion *ngFor="let item of kurals">
+      <mat-expansion-panel class="card-margin">
+        <mat-expansion-panel-header collapsedHeight="150px" expandedHeight="125px" MatAccordionDisplayMode>
+          <div>
             <p class="text-primary">
-                <span>{{item.kural[0]}}</span><br>
-                <span>{{item.kural[1]}}</span>
+              <span>{{item.kural[0]}}</span><br>
+              <span>{{item.kural[1]}}</span>
             </p>
-              <br>
-              <p>{{item.meaning.ta_mu_va}}</p>
-              <p>{{item.meaning.ta_salamon}}</p>
-              <div class="english-translation">
-                <p>{{item.meaning.en}}</p>
-              </div>
+            <br>
+            <p>{{item.meaning.ta_mu_va}}</p>
+            <p>{{item.meaning.ta_salamon}}</p>
+            <div class="english-translation">
+              <p>{{item.meaning.en}}</p>
             </div>
-          </mat-expansion-panel-header>
+          </div>
+        </mat-expansion-panel-header>
 
 
-          <app-maincomponent [sampleKural]="item" [chars]='chars'></app-maincomponent>
-        </mat-expansion-panel>
-        </mat-accordion>
+        <app-maincomponent [sampleKural]="item" [chars]='chars'></app-maincomponent>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 </div>
-

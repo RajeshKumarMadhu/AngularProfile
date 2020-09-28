@@ -1,5 +1,11 @@
-<app-header></app-header>
-<app-paals [data]='kurals' [chars]='chars'></app-paals>
-<div class="mx-auto">
-  <mat-progress-bar mode="determinate" value="40" *ngIf="dataLoaded"></mat-progress-bar>
+<div class="hidden-xs hidden-sm">
+  <app-header></app-header>
+  <app-paals [data]='kurals' [chars]='chars'></app-paals>
+  <div class="mx-auto">
+    <mat-progress-bar mode="determinate" value="40" *ngIf="dataLoaded"></mat-progress-bar>
+  </div>
+</div>
+<div class="container visible-xs visible-sm">
+  <button type="button" name="" id="" class="btn btn-lg btn-block"> For Best view try desktop
+    version.</button>
 </div>

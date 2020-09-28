@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { ContactmeComponent } from "../contactme/contactme.component";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
+  constructor(public dialog: MatDialog) {}
 
-  constructor() { }
+  ngOnInit() {}
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
 
-  ngOnInit() {
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(ContactmeComponent, dialogConfig);
   }
-
 }
